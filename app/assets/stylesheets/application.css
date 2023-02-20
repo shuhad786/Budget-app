@@ -1,3 +1,7 @@
+.front-page {
+  background-image: url("background-front-page.jpg");
+}
+
 .main-color {
   background-color: #3778c2;
 }
@@ -13,11 +17,12 @@
 .link {
   text-decoration: none;
   border-radius: 10px;
-  padding: 0.5em;
+  padding: 0.8em;
+  width: 10em;
   background-color: #5fb523;
 }
 
 .link:hover {
   color: #08f5fc;
-  border: #08f5fc solid 2px;
+  border: #08f5fc solid 0.5px;
 }

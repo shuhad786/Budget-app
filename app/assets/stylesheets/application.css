@@ -47,7 +47,7 @@
 }
 
 .font-light {
-  font-family: 'ProximaLight';
+  font-family: 'ProximaLight', sans-serif;
   src: url('ProximaNovaCondensedLight.otf');
   font-weight: 700;
   color: #434b54;

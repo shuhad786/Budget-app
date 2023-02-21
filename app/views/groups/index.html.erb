@@ -1,14 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
+<% if user_signed_in? %>
+  <%= button_to 'Sign out', destroy_user_session_path(@user), method: :delete, data: { turbo: false }, class: "sign-out" %>
+  <%= link_to 'add category', new_group_path %>
   <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
+    <%= image_tag group.icon %>
+    <%= group.name %>
   <% end %>
-</div>
-
-<%= link_to "New group", new_group_path %>
+<% else %>
+  <div class="sign-in-color"><%= link_to 'Sign In', new_user_session_path, class: "sign-in" %></div>
+<% end%>

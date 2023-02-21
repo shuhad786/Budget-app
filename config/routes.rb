@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   }
 
   resources :entities, only: [:index]
-  resources :groups, only: [:index]
-  resources :users
+  resources :groups, only: [:index, :show, :new, :create, :destroy]
+  resources :users, only: [:index]
   
   devise_scope :user do
     authenticated :user do

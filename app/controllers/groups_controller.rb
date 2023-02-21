@@ -17,30 +17,26 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit; end
 
-  # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
+    @group.users_id = current_user.id
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+        format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /groups/1 or /groups/1.json
   def update
-    respond_to do |format|
+    respond_to do |_format|
       if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
+        redirect_to authenticated_root_path, notice: 'Group was successfully updated.'
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
     end
   end
@@ -64,6 +60,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :icon, :users_id)
   end
 end

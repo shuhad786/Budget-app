@@ -1,5 +1,11 @@
 .front-page {
   background-image: url("background-front-page.jpg");
+  width: 80%;
+  position: absolute;
+  left: 5em;
+  padding: 1.5em;
+  border-radius: 20px;
+  top: 2.5em;
 }
 
 .main-color {
@@ -10,19 +16,40 @@
   background-color: #5fb523;
 }
 
-.text-color {
-  color: #434b54
-}
-
 .link {
   text-decoration: none;
   border-radius: 10px;
   padding: 0.8em;
   width: 10em;
   background-color: #5fb523;
+  border: none;
 }
 
 .link:hover {
   color: #08f5fc;
   border: #08f5fc solid 0.5px;
+}
+
+.link2 {
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.8em;
+  width: 20em;
+  border: none;
+}
+
+.font-bold {
+  font-family: 'ProximaBold', sans-serif;
+  src: url('ProximaNovaBold.otf');
+  font-weight: 900;
+  color: #434b54;
+  font-size: 50px;
+}
+
+.font-light {
+  font-family: 'ProximaLight', sans-serif;
+  src: url('ProximaNovaCondensedLight.otf');
+  font-weight: 700;
+  color: #434b54;
+  font-size: 24px;
 }

@@ -7,7 +7,10 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @group = Group.find(params[:id])
+    @entities = Entity.where(groups_id: params[:id])
+  end  
 
   # GET /groups/new
   def new
@@ -18,15 +21,15 @@ class GroupsController < ApplicationController
   def edit; end
 
   def create
-    @group = Group.new(group_params)
-    @group.users_id = current_user.id
-
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to groups_path, notice: 'Group was successfully created.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    @entity = Entity.new(entity_params)
+    @entity.groups_id = params[:group_id]
+    @entity.users_id = current_user.id
+  
+    if @entity.save
+      redirect_to group_path(params[:group_id]), notice: 'Entity was successfully created.'
+    else
+      logger.error(@entity.errors.full_messages.join(", "))
+      render :new, status: :unprocessable_entity
     end
   end
 

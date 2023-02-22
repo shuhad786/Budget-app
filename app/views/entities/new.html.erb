@@ -1,9 +1,20 @@
 <h1>New entity</h1>
 
-<%= render "form", entity: @entity %>
+<%= form_with model: @entity, url: group_entities_path(params[:group_id]) do |form| %>
+  <div class="field font-light mb-3">
+    <%= form.label :name %><br />
+    <%= form.text_field :name, class: "form-control w-25", autofocus: true %>
+  </div>
 
-<br>
+  <div class="field font-light mb-3">
+    <%= form.label :amount %><br />
+    <%= form.number_field :amount, class: "form-control w-25", autofocus: true %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
+  </div>
+<% end %>
 
 <div>
-  <%= link_to "Back to entities", entities_path %>
+  <%= link_to "Back", group_path(params[:group_id]) %>
 </div>

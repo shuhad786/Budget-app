@@ -2,42 +2,42 @@
   <h1>Transactions</h1>
 </div>
 <div class="d-flex justify-content-end">
-  <%= button_to "Back", groups_path, class: "p-2 me-5 link font-light" %>
+  <%= link_to groups_path do %>
+    <i class="fa-solid fa-angle-left icon-back me-5"></i>
+  <% end %>
 </div>
+
 
 <div class="card m-5">
   <div class="card-body d-flex align-items-center justify-content-between">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center ms-5">
       <%= image_tag @group.icon, class: "image-size m-3" %>
-      <p class="font-light"><%= @group.name %></p>
+      <p class="font-light ms-3"><%= @group.name %></p>
     </div>
-    <div class="ml-auto">
-      <%= button_to "Remove", @group, method: :delete, class:"p-2 btn btn-danger font-light" %>
-    </div>
+    <p class="font-light me-3">Total Transactions: $<%= @group.total %></p>
   </div>
 </div>
 
 <div class="d-flex justify-content-center font-bold">
   <h2>Details</h2>
 </div>
-<%= link_to "create", new_group_entity_path(group_id: @group.id), class:"p-2 btn btn-danger font-light" %>
 
 <% if @entities.empty? %>
   <p>nothing here</p>
 <% else %>
-  <div class="card m-5">
-    <div class="card-body d-flex align-items-center justify-content-between">
-      <% @entities.each do |entity| %>
-        <%= entity.name %>
-        <p>$ <%= entity.amount%></p>
-        <div class="ml-auto">
-          <%= button_to "Remove", @group, method: :delete, class:"p-2 btn btn-danger font-light" %>
+  <% @entities.each do |entity| %>
+    <div class="card m-5">
+      <div class="card-body d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center ms-5">
+          <%= image_tag @group.icon, class: "image-size m-3" %>
+          <p class="font-light ms-3"><%= entity.name %></p>
         </div>
-      <% end %>
+        <p class="font-light me-3">Amount: $<%= entity.amount%></p>
       </div>
-  </div>
+    </div>
+  <% end %>
 <% end %>
-    
 
-
-
+<div class="row">
+  <%= link_to "create", new_group_entity_path(group_id: @group.id), class:"link font-light" %>
+</div>

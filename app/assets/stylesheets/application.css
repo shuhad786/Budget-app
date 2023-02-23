@@ -1,9 +1,7 @@
-@import "font-awesome";
-@import "font-awesome-sprockets";
-
-html, body {
+html body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .front-page {
@@ -14,6 +12,10 @@ html, body {
   padding: 1.5em;
   border-radius: 20px;
   top: 3em;
+}
+
+.width {
+  width: 12em;
 }
 
 .main-color {
@@ -27,15 +29,68 @@ html, body {
 .link {
   text-decoration: none;
   border-radius: 10px;
-  padding: 0.8em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
   width: 6.5em;
   background-color: #5fb523;
   border: none;
+  text-align: center;
 }
 
 .link:hover {
-  color: #08f5fc;
-  border: #08f5fc solid 0.5px;
+  color: white;
+  border: white solid 0.5px;
+}
+
+.icon-back-form {
+  text-decoration: none;
+  border: none;
+  color: #434b54;
+  font-size: 34px;
+  padding: 0.5em;
+  background-color: #5fb523;
+  border-radius: 50%;
+  width: 30%;
+  text-align: center;
+}
+
+.icon-back-form:hover {
+  color: white;
+  border: white solid 0.5px;
+}
+
+.icon-back {
+  text-decoration: none;
+  border: none;
+  color: #434b54;
+  font-size: 34px;
+  padding: 0.5em;
+  background-color: #5fb523;
+  border-radius: 50%;
+  width: 70%;
+  text-align: center;
+}
+
+.icon-back:hover {
+  color: white;
+  border: white solid 0.5px;
+}
+
+.icon-trash {
+  text-decoration: none;
+  border: none;
+  color: #434b54;
+  font-size: 34px;
+  padding: 0.5em;
+  background-color: #5fb523;
+  border-radius: 50%;
+  width: 4%;
+  text-align: center;
+}
+
+.icon-trash:hover {
+  color: white;
+  border: white solid 0.5px;
 }
 
 .font-bold {
@@ -72,4 +127,18 @@ html, body {
   display: flex;
   justify-content: center;
   color: #434b54;
+}
+
+.Savvy {
+  font-family: 'ProximaBold', sans-serif;
+  src: url('Proxima-Nova-Bold-Italic.otf');
+  font-weight: 900;
+  color: #434b54;
+  font-size: 50px;
+  font-style: italic;
+}
+
+.fa-bars {
+  color: #434b54;
+  font-size: 30px;
 }

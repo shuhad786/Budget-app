@@ -1,19 +1,20 @@
-<h1>New Category</h1>
+<div class="container main-color d-flex flex-column align-items-center rounded">
+  <h1 class="mt-5">New Category</h1>
+  <%= form_with model: @group, url: groups_path do |form| %>
+    <div class="field font-light mb-3 mt-3">
+      <%= form.label :name %><br />
+      <%= form.text_field :name, class: "form-control", autofocus: true %>
+    </div>
 
-<%= form_with model: @group, url: groups_path do |form| %>
-  <div class="field font-light mb-3">
-    <%= form.label :name %><br />
-    <%= form.text_field :name, class: "form-control w-25", autofocus: true %>
-  </div>
-
-  <div class="field font-light mb-3">
-    <%= form.label :photo %><br />
-    <%= form.select :icon, [['cars', 'cars.jpg'], ['outings', 'outings.jpg'],['groceries', 'groceries.jpg'], ['health care', 'health-care.jpg'], ['pets', 'pets.jpg']], class: "link2", autofocus: true %>
-  </div>
-  <div class="actions">
-    <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
-  </div>
-<% end %>
-<div>
-  <%= link_to "Back to groups", groups_path %>
+    <div class="field font-light mb-3">
+      <%= form.label :photo %><br />
+      <%= form.select :icon, [['cars', 'cars.jpg'], ['outings', 'outings.jpg'],['groceries', 'groceries.jpg'], ['health care', 'health-care.jpg'], ['pets', 'pets.jpg']], class: "link2", autofocus: true %>
+    </div>
+    <div class="d-flex flex-column">
+      <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
+      <%= link_to groups_path do %>
+        <i class="fa-solid fa-angle-left icon-back mb-3"></i>
+      <% end %>
+    </div>
+  <% end %>
 </div>

@@ -1,4 +1,4 @@
-html, body {
+html body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -142,4 +142,3 @@ html, body {
   color: #434b54;
   font-size: 30px;
 }
-

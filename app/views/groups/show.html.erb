@@ -14,7 +14,7 @@
       <%= image_tag @group.icon, class: "image-size m-3" %>
       <p class="font-light ms-3"><%= @group.name %></p>
     </div>
-    <p class="font-light me-3">Total Transactions: $<%= @group.total %></p>
+    <p class="font-light me-3">Total Amount: $<%= @group.total %></p>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
 </div>
 
 <% if @entities.empty? %>
-  <p>nothing here</p>
+  <p class="font-light text-center">No Transactions made</p>
 <% else %>
   <% @entities.each do |entity| %>
     <div class="card m-5">
@@ -39,5 +39,5 @@
 <% end %>
 
 <div class="row">
-  <%= link_to "create", new_group_entity_path(group_id: @group.id), class:"link font-light" %>
+  <%= link_to "Add new Transaction", new_group_entity_path(group_id: @group.id), class:"link font-light" %>
 </div>

@@ -1,26 +1,27 @@
 <% if user_signed_in? %>
-  <h1 class="text-center">Category</h1>
-  
-    <% @groups.each do |group| %>
-      <div class="card d-flex m-5 p-3">
-        <%= link_to group_path(group.id), class: "font-light" do %>
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center ms-4 me-5">
-              <%= image_tag group.icon, class: "image-size m-3" %>
-              <p class="font-light"><%= group.name %></p>
-            </div>
-            <p class="font-light ms-5">Amount: $<%= group.total%></p>
+  <div class="text-center font-bold">
+    <h1>Category</h1>
+  </div>
+  <% @groups.each do |group| %>
+    <div class="card d-flex m-5 p-3">
+      <%= link_to group_path(group.id), class: "font-light" do %>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center ms-4 me-5">
+            <%= image_tag group.icon, class: "image-size m-3" %>
+            <p class="font-light"><%= group.name %></p>
           </div>
-        <% end %>
-        <%= button_to group_path(id: group.id), method: :delete, data: { turbo: false }, class: 'ms-4 icon-trash font-light' do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
-      </div>
-    <% end %>
+          <p class="font-light ms-5">Total Amount: $<%= group.total%></p>
+        </div>
+      <% end %>
+      <%= button_to group_path(id: group.id), method: :delete, data: { turbo: false }, class: 'ms-4 icon-trash font-light' do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+    </div>
+  <% end %>
     
-      <div class="text-center row">
-        <%= link_to 'Add New Category', new_group_path, class: 'link font-light mx-auto' %>
-      </div>
+  <div class="text-center row">
+    <%= link_to 'Add New Category', new_group_path, class: 'link font-light mx-auto' %>
+  </div>
    
 <% else %>
   <div class="sign-in-color"><%= link_to 'Sign In', new_user_session_path, class: "sign-in" %></div>

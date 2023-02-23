@@ -5,23 +5,23 @@ RSpec.describe Entity, type: :request do
   before :each do
     @user = User.create(
       name: 'Leopard',
-			email: 'leopard@gmail.com',
-			password: '122334',
-			password_confirmation: '122334'
-		)
+      email: 'leopard@gmail.com',
+      password: '122334',
+      password_confirmation: '122334'
+    )
 
-		@group = Group.create(
-			name: 'Outing',
-			icon: 'outings.jpg',
-			users_id: @user.id
-		)
+    @group = Group.create(
+      name: 'Outing',
+      icon: 'outings.jpg',
+      users_id: @user.id
+    )
 
     @entity = Entity.create(
-			name: 'Snacks',
-			amount: 40,
-			users_id: @user.id,
-			group_id: @group.id
-		)
+      name: 'Snacks',
+      amount: 40,
+      users_id: @user.id,
+      group_id: @group.id
+    )
     sign_in @user
   end
 

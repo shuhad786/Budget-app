@@ -7,10 +7,16 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
+  # def show
+  #   @group = Group.find(params[:id])
+  #   @entities = Entity.where(group_id: params[:id])
+  # end
+
   def show
     @group = Group.find(params[:id])
-    @entities = Entity.where(groups_id: params[:id])
-  end  
+    @entities = @group.entities.all
+    @entity = Entity.new
+  end
 
   # GET /groups/new
   def new
@@ -20,7 +26,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit; end
 
-  ef create
+  def create
     @group = Group.new(group_params)
     @group.users_id = current_user.id
 

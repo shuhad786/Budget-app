@@ -1,5 +1,7 @@
 <div class="nav navbar main-color">
+  <i class="fa-solid fa-bars ms-5"></i>
+  <h1 class="Savvy ms-5">SAVVY</h1>
   <% if user_signed_in? %>
-    <%= button_to 'Sign out', destroy_user_session_path(@user), method: :delete, data: { turbo: false }, class: 'btn btn-danger font-light' %>
+    <%= button_to 'Sign out', destroy_user_session_path(@user), method: :delete, data: { turbo: false }, class: 'btn btn-danger font-light me-5' %>
   <% end %>
 </div>

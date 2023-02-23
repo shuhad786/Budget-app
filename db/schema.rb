@@ -46,10 +46,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_111517) do
     t.string "name"
     t.integer "amount", default: 0
     t.bigint "users_id", null: false
-    t.bigint "groups_id", null: false
+    t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["groups_id"], name: "index_entities_on_groups_id"
+    t.index ["group_id"], name: "index_entities_on_group_id"
     t.index ["users_id"], name: "index_entities_on_users_id"
   end
 
@@ -77,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_111517) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "entities", "groups", column: "groups_id"
+  add_foreign_key "entities", "groups"
   add_foreign_key "entities", "users", column: "users_id"
   add_foreign_key "groups", "users", column: "users_id"
 end

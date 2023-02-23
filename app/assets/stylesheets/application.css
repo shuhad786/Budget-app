@@ -1,3 +1,11 @@
+@import "font-awesome";
+@import "font-awesome-sprockets";
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
 .front-page {
   background-image: url("background-front-page.jpg");
   width: 80%;
@@ -5,7 +13,7 @@
   left: 5em;
   padding: 1.5em;
   border-radius: 20px;
-  top: 2.5em;
+  top: 3em;
 }
 
 .main-color {
@@ -20,7 +28,7 @@
   text-decoration: none;
   border-radius: 10px;
   padding: 0.8em;
-  width: 10em;
+  width: 6.5em;
   background-color: #5fb523;
   border: none;
 }
@@ -28,14 +36,6 @@
 .link:hover {
   color: #08f5fc;
   border: #08f5fc solid 0.5px;
-}
-
-.link2 {
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 0.8em;
-  width: 20em;
-  border: none;
 }
 
 .font-bold {
@@ -51,5 +51,25 @@
   src: url('ProximaNovaCondensedLight.otf');
   font-weight: 700;
   color: #434b54;
-  font-size: 24px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.image-size {
+  height: 15%;
+  width: 15%;
+}
+
+.alert {
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  color: #434b54;
+}
+
+.notice {
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  color: #434b54;
 }

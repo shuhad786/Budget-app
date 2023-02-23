@@ -1,10 +1,16 @@
 <% if user_signed_in? %>
-  <%= button_to 'Sign out', destroy_user_session_path(@user), method: :delete, data: { turbo: false }, class: "sign-out" %>
-  <%= link_to 'add category', new_group_path %>
-  <% @groups.each do |group| %>
-    <%= image_tag group.icon %>
-    <%= group.name %>
-  <% end %>
+    <h1>Category</h1>
+    <%= link_to 'add', new_group_path, class: 'link font-light mb-5' %>
+    <% @groups.each do |group| %>
+      <div class="card m-5 p-3">
+        <%= link_to group_path(group.id), class: "font-light" do %>
+          <%= image_tag group.icon, class: "image-size m-3" %>
+          <%= group.name %>
+        <% end %>
+        <%= button_to 'delete', group_path(id: group.id), method: :delete, data: { turbo: false }, class: 'link font-light' %>
+      </div>
+      
+    <% end %>
 <% else %>
   <div class="sign-in-color"><%= link_to 'Sign In', new_user_session_path, class: "sign-in" %></div>
 <% end%>

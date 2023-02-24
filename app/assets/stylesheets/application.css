@@ -25,11 +25,10 @@ html body {
 }
 
 .splash:hover {
- background-color: #3778c2;
- border-radius: 10px;
- color: white;
+  background-color: #3778c2;
+  border-radius: 10px;
+  color: white;
 }
-
 
 .link {
   text-decoration: none;

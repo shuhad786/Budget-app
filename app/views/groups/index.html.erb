@@ -7,14 +7,14 @@
             <%= image_tag group.icon, class: "image-size m-3" %>
             <p class="font-light"><%= group.name %></p>
           </div>
-          <p class="font-light ms-5">Amount: $<%= group.total%></p>
+          <p class="font-light ms-5">Total Amount: $<%= group.total%></p>
         </div>
       <% end %>
     </div>
   <% end %>
     
   <div class="text-center row">
-    <%= link_to 'Add New Category', new_group_path, class: 'border link font-light mx-auto' %>
+    <%= link_to 'Add New Category', new_group_path, class: 'link font-light mx-auto' %>
   </div>
    
 <% else %>

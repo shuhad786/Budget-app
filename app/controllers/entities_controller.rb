@@ -23,7 +23,7 @@ class EntitiesController < ApplicationController
     @entity = @group.entities.new(entity_params)
     @entity.user = current_user
     if @entity.save
-      redirect_to group_path(@group), notice: 'Entity was successfully created.'
+      redirect_to group_path(@group), notice: 'Transaction processed successfully.'
     else
       render :new
     end
@@ -47,7 +47,7 @@ class EntitiesController < ApplicationController
     @entity.destroy
 
     respond_to do |format|
-      format.html { redirect_to entities_url, notice: 'Entity was successfully destroyed.' }
+      format.html { redirect_to entities_url, notice: 'Transaction successfully removed.' }
       format.json { head :no_content }
     end
   end

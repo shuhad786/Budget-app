@@ -3,7 +3,7 @@
   <%= form_with model: @group, url: groups_path do |form| %>
     <div class="field font-light mb-3 mt-3">
       <%= form.label :name %><br />
-      <%= form.text_field :name, class: "form-control", autofocus: true %>
+      <%= form.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter category name here" %>
     </div>
 
     <div class="field font-light mb-3">
@@ -13,7 +13,7 @@
     <div class="d-flex flex-column">
       <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
       <%= link_to groups_path do %>
-        <i class="fa-solid fa-angle-left icon-back mb-3"></i>
+        <i class="fa-solid fa-angle-left icon-back-form mb-3"></i>
       <% end %>
     </div>
   <% end %>

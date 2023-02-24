@@ -1,25 +1,11 @@
-<div class="d-flex justify-content-center font-bold">
-  <h1>Transactions</h1>
-</div>
-<div class="d-flex justify-content-end">
-  <%= link_to groups_path do %>
-    <i class="fa-solid fa-angle-left icon-back me-5"></i>
-  <% end %>
-</div>
-
-
 <div class="card m-5">
   <div class="card-body d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center ms-5">
       <%= image_tag @group.icon, class: "image-size m-3" %>
       <p class="font-light ms-3"><%= @group.name %></p>
     </div>
-    <p class="font-light me-3">Total Transactions: $<%= @group.total %></p>
+    <p class="font-light me-3">$<%= @group.total %></p>
   </div>
-</div>
-
-<div class="d-flex justify-content-center font-bold">
-  <h2>Details</h2>
 </div>
 
 <% if @entities.empty? %>
@@ -39,5 +25,5 @@
 <% end %>
 
 <div class="row">
-  <%= link_to "create", new_group_entity_path(group_id: @group.id), class:"link font-light" %>
+  <%= link_to "Add New Transaction", new_group_entity_path(group_id: @group.id), class:"link font-light" %>
 </div>

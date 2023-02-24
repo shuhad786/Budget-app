@@ -1,0 +1,36 @@
+<div class="d-flex flex-column align-items-center">
+  <h1 class="font-bold">SAVVY</h1>
+
+  <h2 class="font-bold">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field font-light mb-3">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, class: "form-control", autofocus: true %>
+    </div>
+
+    <div class="field font-light mb-3">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field font-light mb-3">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+    </div>
+
+    <div class="field font-light mb-3">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class: "link font-light mb-5 mt-3" %>
+    </div>
+  <% end %>
+</div>

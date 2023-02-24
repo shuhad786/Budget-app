@@ -1,9 +1,24 @@
-<h1>New entity</h1>
+<div class="container main-color d-flex flex-column align-items-center rounded">
 
-<%= render "form", entity: @entity %>
+  `<h1>New Transaction</h1>
 
-<br>
+  <%= form_with model: @entity, url: group_entities_path(params[:group_id]) do |form| %>
+    <div class="field font-light mb-3">
+      <%= form.label :name %><br />
+      <%= form.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter the name here" %>
+    </div>
 
-<div>
-  <%= link_to "Back to entities", entities_path %>
+    <div class="field font-light mb-3">
+      <%= form.label :amount %><br />
+      <%= form.number_field :amount, class: "form-control", autofocus: true, placeholder: "$" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
+      
+    </div>
+    <%= link_to group_path(params[:group_id]) do %>
+      <i class="fa-solid fa-angle-left icon-back-form mb-3"></i>
+    <% end %>
+  <% end %>
 </div>

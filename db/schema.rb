@@ -17,15 +17,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_113356) do
   create_table "entities", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
+    t.bigint "users_id", null: false
+    t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_entities_on_group_id"
+    t.index ["users_id"], name: "index_entities_on_users_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_groups_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_113356) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entities", "groups"
+  add_foreign_key "entities", "users", column: "users_id"
+  add_foreign_key "groups", "users", column: "users_id"
 end

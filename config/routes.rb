@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
 
-  resources :entities, only: [:index]
-  resources :groups, only: [:index]
+  
+  resources :groups, only: [:index, :show, :new, :create, :destroy] do
+    resources :entities, only: [:new, :create, :destroy]
+  end
   resources :users
   
   devise_scope :user do

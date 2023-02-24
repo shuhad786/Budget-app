@@ -3,14 +3,8 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.where(users_id: current_user.id)
   end
-
-  # GET /groups/1 or /groups/1.json
-  # def show
-  #   @group = Group.find(params[:id])
-  #   @entities = Entity.where(group_id: params[:id])
-  # end
 
   def show
     @group = Group.find(params[:id])

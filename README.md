@@ -108,7 +108,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Video Demo <a name="video-demo"></a>
 
-- [Video Demo Link](https://savvy-deploy-project.onrender.com)
+- [Video Demo Link](https://www.loom.com/share/8c1627df7afe4e7b8908cae5ee19a7e7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

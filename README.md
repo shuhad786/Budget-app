@@ -179,7 +179,7 @@ rspec
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 Feel free to check the [issues page](../../issues/).
 

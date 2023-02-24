@@ -13,9 +13,6 @@
           <p class="font-light ms-5">Total Amount: $<%= group.total%></p>
         </div>
       <% end %>
-      <%= button_to group_path(id: group.id), method: :delete, data: { turbo: false }, class: 'ms-4 icon-trash font-light' do %>
-        <i class="fa-solid fa-trash-can"></i>
-      <% end %>
     </div>
   <% end %>
     

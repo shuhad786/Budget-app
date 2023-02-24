@@ -1,21 +1,24 @@
-<h1>New Transaction</h1>
+<div class="container main-color d-flex flex-column align-items-center rounded">
 
-<%= form_with model: @entity, url: group_entities_path(params[:group_id]) do |form| %>
-  <div class="field font-light mb-3">
-    <%= form.label :name %><br />
-    <%= form.text_field :name, class: "form-control w-25", autofocus: true, placeholder: "Enter the name here" %>
-  </div>
+  `<h1>New Transaction</h1>
 
-  <div class="field font-light mb-3">
-    <%= form.label :amount %><br />
-    <%= form.number_field :amount, class: "form-control w-25", autofocus: true, placeholder: "$" %>
-  </div>
+  <%= form_with model: @entity, url: group_entities_path(params[:group_id]) do |form| %>
+    <div class="field font-light mb-3">
+      <%= form.label :name %><br />
+      <%= form.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter the name here" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
-  </div>
-<% end %>
+    <div class="field font-light mb-3">
+      <%= form.label :amount %><br />
+      <%= form.number_field :amount, class: "form-control", autofocus: true, placeholder: "$" %>
+    </div>
 
-<div>
-  <%= link_to "Back", group_path(params[:group_id]) %>
+    <div class="actions">
+      <%= form.submit "Save", class: "link font-light mb-5 mt-3" %>
+      
+    </div>
+    <%= link_to group_path(params[:group_id]) do %>
+      <i class="fa-solid fa-angle-left icon-back-form mb-3"></i>
+    <% end %>
+  <% end %>
 </div>

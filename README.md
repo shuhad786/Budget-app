@@ -1,4 +1,3 @@
-<!--
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
 
@@ -38,13 +37,13 @@ After you're finished please remove all the comments and instructions!
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🚀 Video Demo](#video-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -100,7 +99,15 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://savvy-deploy-project.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- VIDEO DEMO -->
+
+## 🚀 Video Demo <a name="video-demo"></a>
+
+- [Video Demo Link](https://www.loom.com/share/8c1627df7afe4e7b8908cae5ee19a7e7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,7 +115,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> This is a blog application in the which the user can create posts, comments and login with username and password.
+> This is a Budget application in the which the user can create categories, transactions and login with username and password.
 
 To get a local copy up and running, follow these steps.
 
@@ -124,20 +131,21 @@ PostgreSQL installed
 
 Clone this repository to your desired folder:
 
-cd into BLOG
+cd into budget-app
 
 ### Install
 
 Install this project with:
 
 run gem install rails command in terminal
+
 run bundle install
 
 ### Usage
 
 To run the project, execute the following command:
 
-rails s -p 3002
+rails s
 
 ### Run tests
 
@@ -145,34 +153,16 @@ To run tests, run the following command:
 
 rspec
 
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 👤 **Shuhad Loofer**
 
 - GitHub: [@Shuhad786](https://github.com/Shuhad786)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/shuhad-loofer)
-
-👤 **Sharon Kessio**
-
-- GitHub: [@kessio](https://github.com/kessio)
-- Twitter: [@kessio_sharon](https://twitter.com/kessio_sharon)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/sharon-kessio-172220b5)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -188,7 +178,7 @@ Example:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-Contributions, issues, and feature requests are welcome!
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 Feel free to check the [issues page](../../issues/).
 

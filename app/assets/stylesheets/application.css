@@ -4,16 +4,6 @@ html body {
   overflow-x: hidden;
 }
 
-.front-page {
-  background-image: url("background-front-page.jpg");
-  width: 80%;
-  position: absolute;
-  left: 5em;
-  padding: 1.5em;
-  border-radius: 20px;
-  top: 3em;
-}
-
 .width {
   width: 12em;
 }
@@ -24,6 +14,20 @@ html body {
 
 .second-color {
   background-color: #5fb523;
+}
+
+.splash {
+  text-decoration: none;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border: none;
+  text-align: center;
+}
+
+.splash:hover {
+  background-color: #3778c2;
+  border-radius: 10px;
+  color: white;
 }
 
 .link {
